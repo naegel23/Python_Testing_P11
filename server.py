@@ -14,20 +14,34 @@ def loadCompetitions():
          return listOfCompetitions
 
 
+def check_email(email):
+    try:
+        club = [club for club in clubs if club['email'] == email][0]
+        return club
+    except IndexError:
+        raise IndexError()
+
+
 app = Flask(__name__)
 app.secret_key = 'something_special'
 
 competitions = loadCompetitions()
 clubs = loadClubs()
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/showSummary',methods=['POST'])
+
+@app.route('/showSummary', methods=['POST'])
 def showSummary():
-    club = [club for club in clubs if club['email'] == request.form['email']][0]
-    return render_template('welcome.html',club=club,competitions=competitions)
+    try:
+        club = check_email(request.form['email'])
+    except IndexError:
+        flash(f"Sorry, that email {request.form['email']} was not found.", category='error')
+        return redirect(url_for('index'))
+    return render_template('welcome.html', club=club, competitions=competitions)
 
 
 @app.route('/book/<competition>/<club>')

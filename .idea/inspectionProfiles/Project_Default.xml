@@ -1,0 +1,19 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="Model.Player.to_dict" />
+          <option value="ablog.theblog.models.Profile.*" />
+          <option value="ablog.theblog.models.Post.*" />
+          <option value="ablog.theblog.models.Critique.*" />
+          <option value="api_rest.theproject.models.Project.*" />
+          <option value="api_rest.theproject.models.Contributor.*" />
+          <option value="api_rest.theproject.models.Issue.*" />
+          <option value="api_rest.theproject.models.Comment.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
