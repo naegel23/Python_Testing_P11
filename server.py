@@ -14,6 +14,25 @@ def loadCompetitions():
          return listOfCompetitions
 
 
+def check_available_points(competitionData, clubData, placesData):
+    competition = [c for c in competitions if c['name'] == competitionData][0]
+    club = [c for c in clubs if c['name'] == clubData][0]
+    competition_places = int(competition['numberOfPlaces'])
+    places_required = int(placesData)
+    points_available = int(club['points'])
+    if places_required < points_available:
+        competition['numberOfPlaces'] = competition_places - places_required
+        club['points'] = points_available - places_required
+        check = False
+        return check, club, competition
+    elif places_required > 12:
+        check = True
+        return check, competitionData, clubData
+    else:
+        check = True
+        return check, competitionData, clubData
+
+
 app = Flask(__name__)
 app.secret_key = 'something_special'
 
@@ -43,12 +62,17 @@ def book(competition,club):
 
 @app.route('/purchasePlaces',methods=['POST'])
 def purchasePlaces():
-    competition = [c for c in competitions if c['name'] == request.form['competition']][0]
-    club = [c for c in clubs if c['name'] == request.form['club']][0]
-    placesRequired = int(request.form['places'])
-    competition['numberOfPlaces'] = int(competition['numberOfPlaces'])-placesRequired
-    flash('Great-booking complete!')
-    return render_template('welcome.html', club=club, competitions=competitions)
+    check, club, competition = check_available_points(request.form['competition'], request.form['club'],
+                                                      request.form['places'])
+    if check is False:
+        flash('Great-booking complete!')
+        return render_template('welcome.html', club=club, competitions=competitions, clubs=clubs)
+    elif check is True and int(request.form['places']) > 12:
+        flash("you can't book more than 12 places")
+        return book(request.form['competition'], request.form['club'])
+    else:
+        flash("You don't have enough points available")
+        return book(request.form['competition'], request.form['club'])
 
 
 # TODO: Add route for points display
