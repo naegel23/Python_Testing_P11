@@ -1,25 +1,34 @@
-from locust import HttpUser, task
+from locust import HttpUser, task, between
 
 
-class WebsiteTest(HttpUser):
+class SoftDeskPerf(HttpUser):
+    wait_time = between(0.5, 5.0)
 
-    @task(1)
-    def test1(self):
-        self.client.get("http://localhost:5000")
+    @task
+    def perf_index(self):
+        self.client.get("/")
 
-    @task(2)
-    def test2(self):
-        self.client.post("http://localhost:5000/showSummary", {"email": "john@simplylift.co"})
+    @task
+    def perf_showSummary(self):
+        self.client.post("/showSummary", data={"email": "admin@irontemple.com" })
 
-    @task(3)
-    def test3(self):
-        self.client.get("http://localhost:5000/book/Spring%20Festival/Simply%20Lift")
+    @task
+    def perf_book(self):
+        competition = "Spring Festival 2021"
+        club = "Simply Lift"
+        self.client.get(f"/book/{competition}/{club}")
 
-    @task(4)
-    def test4(self):
-        self.client.post("http://localhost:5000/purchasePlaces",
-                         {"club": "Simply Lift", "competition": "Spring Festival", "places": "3"})
+    @task
+    def perf_purchasePlaces(self):
+        competition = "Spring Festival 2021"
+        club = "Simply Lift"
+        places = "3"
+        self.client.post("/purchasePlaces", data={"competition": competition, "club": club, "places": places })
 
-    @task(5)
-    def test5(self):
-        self.client.get("http://localhost:5000/logout")
+    @task
+    def perf_displayPoints(self):
+        self.client.get('/displayPoints')
+
+    @task
+    def perf_logout(self):
+        self.client.get("/logout")
