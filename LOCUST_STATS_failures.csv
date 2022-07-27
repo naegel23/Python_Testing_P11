@@ -1,4 +1,1 @@
 Method,Name,Error,Occurrences
-GET,/book/Spring%20Festival%202021/Simply%20Lift,HTTPError('500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/book/Spring%20Festival%202021/Simply%20Lift'),4
-POST,/purchasePlaces,HTTPError('500 Server Error: INTERNAL SERVER ERROR for url: http://127.0.0.1:5000/purchasePlaces'),3
-GET,/displayPoints,HTTPError('404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/displayPoints'),1

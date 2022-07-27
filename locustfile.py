@@ -14,20 +14,17 @@ class SoftDeskPerf(HttpUser):
 
     @task
     def perf_book(self):
-        competition = "Spring Festival 2021"
+        competition = "Spring Festival"
         club = "Simply Lift"
         self.client.get(f"/book/{competition}/{club}")
 
     @task
     def perf_purchasePlaces(self):
-        competition = "Spring Festival 2021"
+        competition = "Spring Festival"
         club = "Simply Lift"
         places = "3"
-        self.client.post("/purchasePlaces", data={"competition": competition, "club": club, "places": places })
+        self.client.post("/purchasePlaces", data={"competition": competition, "club": club, "places": places})
 
-    @task
-    def perf_displayPoints(self):
-        self.client.get('/displayPoints')
 
     @task
     def perf_logout(self):
