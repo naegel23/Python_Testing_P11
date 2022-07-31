@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Clubs:</h3>
+        <ul>
+        {% for c in clubs %}
+            <li>Club : {{c['name']}}
+                <br>
+                Points available: {{c['points']}}
+            </li>
+                <br>
+        {% endfor %}
+        </ul>
+    <a href="{{url_for('logout')}}" id="logout-link">Connection Page</a>
+</body>
+</html>
