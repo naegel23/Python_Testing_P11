@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (Python_Testing_P11)" project-jdk-type="Python SDK" />
+=======
+>>>>>>> FEATURE_Implement_Points_Display_Board
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>
