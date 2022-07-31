@@ -30,7 +30,7 @@ def test_purchase_places_valid():
     check, club, competition = check_available_points("Spring Festival", "Simply Lift", 2)
     assert check == False
     assert competition["numberOfPlaces"] == 23
-    assert club["points"] == 11
+    assert club["points"] == 7
 
 
 def test_purchase_more_than_12_places():

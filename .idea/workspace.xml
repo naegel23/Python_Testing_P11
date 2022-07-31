@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c18dd8c1-5e4d-4e9c-8a6e-46ac38a18726" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOCUST_STATS_failures.csv" beforeDir="false" afterPath="$PROJECT_DIR$/LOCUST_STATS_failures.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOCUST_STATS_stats.csv" beforeDir="false" afterPath="$PROJECT_DIR$/LOCUST_STATS_stats.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOCUST_STATS_stats_history.csv" beforeDir="false" afterPath="$PROJECT_DIR$/LOCUST_STATS_stats_history.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LOCUS_TEST_REPORT.html" beforeDir="false" afterPath="$PROJECT_DIR$/LOCUS_TEST_REPORT.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/locustfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

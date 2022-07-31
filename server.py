@@ -20,9 +20,9 @@ def check_available_points(competitionData, clubData, placesData):
     competition_places = int(competition['numberOfPlaces'])
     places_required = int(placesData)
     points_available = int(club['points'])
-    if places_required < points_available:
+    if (places_required * 3) < points_available:
         competition['numberOfPlaces'] = competition_places - places_required
-        club['points'] = points_available - places_required
+        club['points'] = points_available - (places_required * 3)
         check = False
         return check, club, competition
     elif places_required > 12:
